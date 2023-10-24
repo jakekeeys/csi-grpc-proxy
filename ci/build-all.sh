@@ -14,7 +14,7 @@ IMAGE_BUILD_WINDOWS_ARCHES=("amd64")
 
 if [[ -z "${BINARY_VERSION}" ]]; then
   if [[ -z "${GITHUB_REF}" ]]; then
-    : "${BINARY_VERSION:=dev}"
+    : "${BINARY_VERSION:=docker-image-build}"
   else
     if [[ $GITHUB_REF == refs/tags/* ]]; then
       BINARY_VERSION=${GITHUB_REF#refs/tags/}

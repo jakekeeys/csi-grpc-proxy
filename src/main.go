@@ -129,8 +129,8 @@ func main() {
 	h2s := &http2.Server{}
 	proxy := getProxy(proxyToNetwork, proxyToAddr)
 	handler := http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-		log.Printf("request (%s://%s) %s %s %s\n", req.URL.Scheme, req.Host, req.Method, req.URL, req.Proto)
-		log.Printf("request headers %v\n", req.Header)
+		//log.Printf("request (%s://%s) %s %s %s\n", req.URL.Scheme, req.Host, req.Method, req.URL, req.Proto)
+		//log.Printf("request headers %v\n", req.Header)
 
 		proxy.ServeHTTP(res, req)
 	})
